@@ -24,6 +24,7 @@
         <activity android:name=".aidl.BookManagerActivity" />
         <activity android:name=".provider.ProviderActivity" />
         <activity android:name=".socket.TCPClientActivity" />
+        <activity android:name=".binderpool.BinderPoolActivity"/>
 
 
         <service
@@ -33,6 +34,10 @@
         <service
             android:name=".socket.TCPServerService"
             android:process=":remote" />
+
+        <service
+            android:name=".binderpool.BinderPoolService"
+            android:process=":r" />
 
 
         <provider

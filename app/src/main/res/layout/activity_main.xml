@@ -25,4 +25,10 @@
         android:layout_height="wrap_content"
         android:text="Socket测试" />
 
+    <Button
+        android:id="@+id/btn_to_binderpool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Binder连接池测试" />
+
 </LinearLayout>
