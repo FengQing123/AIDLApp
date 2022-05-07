@@ -14,8 +14,9 @@ import com.fengqing.aidlapp.aidl.User;
 /**
  * @author fengqing
  * @date 2019/5/27
+ * <p>
+ * 使用ContentProvider实现数据库的增删改查
  */
-
 public class ProviderActivity extends AppCompatActivity {
 
     private static final String TAG = "ProviderActivity";

@@ -18,6 +18,16 @@ import com.fengqing.aidlapp.R;
 /**
  * @author fengqing
  * @date 2019/5/25
+ * <p>
+ * AIDL实现跨进程：
+ * 1.两个进程 BookManagerActivity（客户端进程） 和 BookManagerService（服务端进程）
+ * 2.客户端进程 的 onCreate 中通过 bindService 方法连接 服务端进程
+ * 3.连接成功后 onServiceConnected()方法里会返回 服务端进程 中创建的Binder对象(IBookManager)
+ * 4.接着把客户端的跨进程接口IOnNewBoorArrivedListener 通过 IBookManager的方法registerListener注册进 服务端进程的 RemoteCallbackList 变量里
+ * 5.服务端进程会启动线程执行ServiceWork，每5秒会添加新书，并遍历RemoteCallbackList，回调IOnNewBoorArrivedListener的OnNewBookArrived()方法
+ * 6.客户端通过Handler打印新书
+ * 7.客户端销毁时，需要执行 服务端进程的Binder对象（IBookManager）unregisterListener，删除RemoteCallbackList里的接口对象，
+ *   执行unbindService 解除客户端进程和服务端进程的连接
  */
 
 public class BookManagerActivity extends AppCompatActivity {

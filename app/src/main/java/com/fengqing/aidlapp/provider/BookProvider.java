@@ -62,6 +62,7 @@ public class BookProvider extends ContentProvider {
 
     /**
      * ContentProvider的创建，做些初始化的操作，但不能做耗时操作
+     * ContentResolver 执行增删改查时创建
      *
      * @return
      */

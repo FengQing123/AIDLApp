@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * @author fengqing
  * @date 2019/5/27
+ * 调用 getWritableDatabase 或者 getReadableDatabase 方法时，
+ * 会根据DB_NAME去本地查找是否有数据库，如果没有就调用onCreate方法创建，
+ * 如果有，就使用DB_VERSION来判断是否要调用onUpgrade方法更新数据库
  */
 
 public class DbOpenHelper extends SQLiteOpenHelper {

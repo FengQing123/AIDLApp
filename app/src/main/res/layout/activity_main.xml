@@ -11,7 +11,7 @@
         android:id="@+id/btn_to_aidl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="AIDL测试" />
+        android:text="AIDL测试(bindService跨进程)" />
 
     <Button
         android:id="@+id/btn_to_provider"
